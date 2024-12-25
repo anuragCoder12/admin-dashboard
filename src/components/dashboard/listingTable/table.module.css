@@ -1,0 +1,36 @@
+.container{
+    width: 100%;
+}
+.container table{
+    width: 100%;
+    margin-top: 20px;
+}
+.container table td{
+    padding: 20px;
+    text-align: center;
+}
+.ViewButton{
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(19, 166, 19);
+    cursor: pointer;
+    color: var(--text);
+    border: none;
+}
+.deleteButton{
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: red;
+    cursor: pointer;
+    color: var(--text);
+    border: none;
+}
+.container th{
+    font-size: 18px;
+    text-align: center;
+    padding: 20px   
+}
+
+

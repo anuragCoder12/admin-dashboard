@@ -1,0 +1,38 @@
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bgSoft);
+  display: flex;
+  gap: 20px;
+}
+.container:hover{
+    background-color: #2e374a;
+}   
+.texts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title {
+  font-size: 16px;
+  color: var(--textSoft);
+}
+.number {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+.details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--textSoft);
+}
+.possitive{
+    font-size: 13px;
+    color: lime;
+}
+.negative{
+    color: red;
+}
