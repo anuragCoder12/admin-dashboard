@@ -1,0 +1,23 @@
+.container{
+    padding: 20px;
+    background-color: var(--bgSoft);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.addButton{
+    padding: 10px;
+    border-radius: 5px; 
+    border: none;
+    background-color: #5d57c9;
+    color: var(--text);
+    cursor: pointer;
+}
+.table{
+    width: 100%;
+}

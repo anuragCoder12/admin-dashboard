@@ -8,7 +8,7 @@ import Chart from '@/components/dashboard/ui/chart/chart';
 function DashBoard() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.main}>
+      {/* <div className={styles.main}>
         <div className={styles.cards}>
           <Card />
           <Card />
@@ -20,7 +20,7 @@ function DashBoard() {
       <div className={styles.right}>
         <Right />
         <Right />
-      </div>
+      </div> */}
     </div>
   );
 }

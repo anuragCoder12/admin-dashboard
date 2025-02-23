@@ -1,43 +1,45 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import styles from "./products.module.css";
-import Search from '@/components/dashboard/search/search';
-import ListingTable from '@/components/dashboard/listingTable/table';
-import Pagination from '@/components/dashboard/pagination/pagination';
-import { ProductsApi } from "@/data/Endpoints/products";
-import TableBody from "@/components/dashboard/listingTable/tableBody";
-import { TestimonialsApi } from "@/data/Endpoints/testimoanials";
+
+import Search from "@/components/dashboard/search/search";
+import ListingTable from "@/components/dashboard/listingTable/table";
+import Pagination from "@/components/dashboard/pagination/pagination";
+import { RegionsApi } from "@/data/Endpoints/regions";
+import TableHead from "@/components/dashboard/listingTable/tableHead";
 import Link from "next/link";
-function Products() {
-  const tableHeadings = [ "Product", "Description", "Priority"];
+import { TestimonialsApi } from "@/data/Endpoints/testimoanials";
+import TableBody from "@/components/dashboard/listingTable/tableBody";
+import styles from "./faq.module.css";
+import { FaqApi } from "@/data/Endpoints/faq";
+function Faq() {
+  const tableHeadings = ["Question", "Answer"];
   const [paginationCount, setPaginationCount] = useState(6);
   const [dataLength, setDataLength] = useState(0);
   const [initialPaginationCount, setInitialPaginationCount] = useState(0);
   const [listItems, setListItems] = useState([]);
-  const fetchList = async () => {
-    const res = await ProductsApi.getProducts();
-    console.log(res)
+  const fetchRegions = async () => {
+    const res = await FaqApi.getFaq();
     setDataLength(res?.data?.data?.length);
     setListItems(res?.data?.data);
   };
   useEffect(() => {
-    fetchList();
+    fetchRegions();
   }, []);
   const handleDelete = async (id) => {
-    console.log("the id is", id)
-    const res = await ProductsApi.deleteProduct(id)
+    const res = await FaqApi.deleteFaq(id)
       if(res.status === 200){
         alert("Region deleted successfully!")
         window.location.reload()
       }
   }
+console.log("first, listItems", dataLength)
   return (
-      <div className={styles.container}>
-        <div className={styles.top}>
-          <Search placeholder="Search Products" />
-          <Link href="/dashboard/products/create" className={styles.addButton}>Add items</Link>
-        </div>
-        <div className={styles.table}>
+    <div className={styles.container}>
+      <div className={styles.top}>
+        <Search placeholder="Search Products" />
+        <Link href="/dashboard/faq/create" className={styles.addButton}>Add items</Link>
+      </div>
+      <div className={styles.table}>
       <div className={styles.container}>
       <table>
         <thead>
@@ -52,12 +54,11 @@ function Products() {
 
                 <TableBody
                 deleteId={handleDelete}
-      route={"products"}
+      route={"faq"}
                 key={i}
                 id={item._id}
-                feild_1={item.name}
-                feild_3={item.description}
-                feild_4={item?.priority}
+                feild_1={item.question}
+                feild_2={item.answer}
                 
                 />
             ))
@@ -72,8 +73,8 @@ function Products() {
         setInitialPaginationCount={setInitialPaginationCount}
         setPaginationCount={setPaginationCount}
       />
-      </div>
+    </div>
   );
 }
 
-export default Products
+export default Faq;

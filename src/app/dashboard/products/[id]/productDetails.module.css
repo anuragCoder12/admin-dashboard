@@ -1,0 +1,107 @@
+.container{
+    padding: 20px;
+    background-color: var(--bgSoft);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form input, .form textarea, .form select{
+    padding: 30px;
+    border-radius: 5px;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 2px solid #2e374a;
+  margin-bottom: 30px;
+}
+.form input, .form select{
+    width: 45%;
+}
+.form textarea{
+    width: 100%;
+}
+.button{
+    padding: 30px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #5d57c9;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* .form select{
+    color: #2e374a;
+} */
+ .featured{
+    width: 100px;
+    padding: 5px 2px;
+   margin-bottom: 30px;
+   border-radius: 25px;
+   border: 1px solid white;
+ }
+ .featured .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    left: 0px;
+    transition: left 0.3s ease-in-out;
+ }
+ .active{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    background-color: #5d57c9;
+    right: -59px;
+    transition: right 1s ease-in;
+ }
+ .featuredContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }
+
+ .dropdownContainer {
+    position: relative;
+    width: 250px;
+    margin-bottom: 50px;
+  }
+  
+  .inputBox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dropdownList {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #5d57c9;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    z-index: 100;
+  }
+  
+  .dropdownItem {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .selectedItem {
+    background-color: #cce5ff;
+  }

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import styles from "./products.module.css";
+import styles from "./category.module.css";
 import Search from '@/components/dashboard/search/search';
 import ListingTable from '@/components/dashboard/listingTable/table';
 import Pagination from '@/components/dashboard/pagination/pagination';
@@ -8,34 +8,35 @@ import { ProductsApi } from "@/data/Endpoints/products";
 import TableBody from "@/components/dashboard/listingTable/tableBody";
 import { TestimonialsApi } from "@/data/Endpoints/testimoanials";
 import Link from "next/link";
-function Products() {
-  const tableHeadings = [ "Product", "Description", "Priority"];
+import { CategoryApi } from "@/data/Endpoints/category";
+function Category() {
+  const tableHeadings = [ "Name"];
   const [paginationCount, setPaginationCount] = useState(6);
   const [dataLength, setDataLength] = useState(0);
   const [initialPaginationCount, setInitialPaginationCount] = useState(0);
   const [listItems, setListItems] = useState([]);
   const fetchList = async () => {
-    const res = await ProductsApi.getProducts();
-    console.log(res)
-    setDataLength(res?.data?.data?.length);
-    setListItems(res?.data?.data);
+    const res = await CategoryApi.getCat();
+    setDataLength(res?.data?.categories?.length);
+    setListItems(res?.data?.categories);
   };
   useEffect(() => {
     fetchList();
   }, []);
   const handleDelete = async (id) => {
     console.log("the id is", id)
-    const res = await ProductsApi.deleteProduct(id)
+    const res = await CategoryApi.deleteCat(id)
       if(res.status === 200){
         alert("Region deleted successfully!")
         window.location.reload()
       }
   }
+  console.log("jijikj", listItems)
   return (
       <div className={styles.container}>
         <div className={styles.top}>
           <Search placeholder="Search Products" />
-          <Link href="/dashboard/products/create" className={styles.addButton}>Add items</Link>
+          <Link href="/dashboard/category/create" className={styles.addButton}>Add items</Link>
         </div>
         <div className={styles.table}>
       <div className={styles.container}>
@@ -56,8 +57,7 @@ function Products() {
                 key={i}
                 id={item._id}
                 feild_1={item.name}
-                feild_3={item.description}
-                feild_4={item?.priority}
+              
                 
                 />
             ))
@@ -76,4 +76,4 @@ function Products() {
   );
 }
 
-export default Products
+export default Category

@@ -24,13 +24,23 @@ function Sidebar() {
           icon: <MdOutlineProductionQuantityLimits />,
         },
         {
-          name: "Orders",
-          link: "/orders",
+          name: "Testimonials",
+          link: "/dashboard/testimonials",
           icon: <IoAlarmSharp />,
         },
         {
-          name: "Customers",
-          link: "/customers",
+          name: "Regions",
+          link: "/dashboard/regions",
+          icon: <IoAccessibility />,
+        },
+        {
+          name: "Faq",
+          link: "/dashboard/faq",
+          icon: <IoAccessibility />,
+        },
+        {
+          name: "Category",
+          link: "/dashboard/category",
           icon: <IoAccessibility />,
         },
       ],
@@ -41,6 +51,11 @@ function Sidebar() {
         {
           name: "Home",
           link: "/dashboard/home",
+          icon: <IoHome />,
+        },
+        {
+          name: "Testimonial Page",
+          link: "/dashboard/testimonialPage",
           icon: <IoHome />,
         },
       ],
