@@ -119,7 +119,7 @@ const fetchCategory = async () => {
           )}
         </div> */}
 
-        <textarea placeholder="Product Description" {...register("description", { required: true })} rows="5"></textarea>
+        <textarea placeholder="Product Description" {...register("description")} rows="5"></textarea>
         <div className={styles.featuredContainer}>
           <p>Featured</p>
           <div onClick={handleFeatured} className={styles.featured}>
