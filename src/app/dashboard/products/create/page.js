@@ -13,6 +13,7 @@ function Create() {
     setValue,
     watch,
     formState: { errors },
+    reset
   } = useForm();
   
   const [featured, setFeatured] = useState(false);
@@ -72,8 +73,11 @@ const fetchCategory = async () => {
     }
   
     try {
-      await ProductsApi.postProduct(formData);
+      const res = await ProductsApi.postProduct(formData);
       alert("Product created successfully");
+      if(res.status === 201){
+        reset()
+      }
     } catch (error) {
       console.error("Error creating product:", error);
     }
