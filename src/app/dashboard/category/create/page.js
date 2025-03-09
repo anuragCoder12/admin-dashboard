@@ -89,12 +89,12 @@ const handleSubmitForm = async (data) => {
               {region.map((item) => (
                 <div
                   key={item?._id}
-                  onClick={() => toggleItem(item?.region_name, item?._id)}
+                  onClick={() => toggleItem(item?.manager_name, item?._id)}
                   className={`${styles.dropdownItem} ${
-                    selectedItems.includes(item?.region_name) ? styles.selectedItem : ""
+                    selectedItems.includes(item?.manager_name) ? styles.selectedItem : ""
                   }`}
                 >
-                  {item?.region_name}
+                  {item?.manager_name}
                 </div>
               ))}
             </div>

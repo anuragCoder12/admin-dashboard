@@ -35,14 +35,14 @@ function HomePage() {
         if (response.data) {
           const data = response.data.data;
           setExistingData(data);
-          setValue("s1_title", data.s1_title || "");
-          setValue("s1_description", data.s1_description || "");
-          setValue("s1_trust", data.s1_trust || "");
-          setValue("s2_desc", data.s2_desc || "");
-          setValue("featured_heading", data.featured_heading || "");
-          setValue("featured_desc", data.featured_desc || "");
-          setValue("s4_icon_title", data.s4_icon_title || "");
-          setValue("satisfied_title", data.satisfied_title || "");
+          setValue("s1_title", data?.s1_title || "");
+          setValue("s1_description", data?.s1_description || "");
+          setValue("s1_trust", data?.s1_trust || "");
+          setValue("s2_desc", data?.s2_desc || "");
+          setValue("featured_heading", data?.featured_heading || "");
+          setValue("featured_desc", data?.featured_desc || "");
+          setValue("s4_icon_title", data?.s4_icon_title || "");
+          setValue("satisfied_title", data?.satisfied_title || "");
           
         }
       } catch (error) {
@@ -129,14 +129,14 @@ console.log("nskfnd", s1VideoFile, s2Image1File, s2Image2File, s3VideoFile, sati
 />
 </div>
        
-        {errors.s1_video && <span>{errors.s1_video.message}</span>}
+        {/* {errors.s1_video && <span>{errors.s1_video.message}</span>} */}
 
         <input
           type="text"
           placeholder="Section 2 Description"
-          {...register("s2_desc", { required: "Section 2 Description is required" })}
+          {...register("s2_desc")}
         />
-        {errors.s2_desc && <span>{errors.s2_desc.message}</span>}
+        {/* {errors.s2_desc && <span>{errors.s2_desc.message}</span>} */}
 
         {existingData.s2_image1 && (
           <div>
@@ -166,7 +166,7 @@ console.log("nskfnd", s1VideoFile, s2Image1File, s2Image2File, s3VideoFile, sati
           {...register("s2_image2")}
           onChange={(e) => setS2Image2File(e.target.files[0])}
         />
-        {errors.s2_image2 && <span>{errors.s2_image2.message}</span>}
+        {/* {errors.s2_image2 && <span>{errors.s2_image2.message}</span>} */}
 
         {existingData.s3_video && (
           <div>
@@ -184,35 +184,35 @@ console.log("nskfnd", s1VideoFile, s2Image1File, s2Image2File, s3VideoFile, sati
           {...register("s3_video")}
           onChange={(e) => setS3VideoFile(e.target.files[0])}
         />
-        {errors.s3_video && <span>{errors.s3_video.message}</span>}
+        {/* {errors.s3_video && <span>{errors.s3_video.message}</span>} */}
 
         <input
           type="text"
           placeholder="Featured Heading"
-          {...register("featured_heading", { required: "Featured Heading is required" })}
+          {...register("featured_heading")}
         />
-        {errors.featured_heading && <span>{errors.featured_heading.message}</span>}
+        {/* {errors.featured_heading && <span>{errors.featured_heading.message}</span>} */}
 
         <input
           type="text"
           placeholder="Featured Description"
-          {...register("featured_desc", { required: "Featured Description is required" })}
+          {...register("featured_desc")}
         />
-        {errors.featured_desc && <span>{errors.featured_desc.message}</span>}
+        {/* {errors.featured_desc && <span>{errors.featured_desc.message}</span>} */}
 
         <input
           type="text"
           placeholder="Section 4 Icon Title"
-          {...register("s4_icon_title", { required: "Section 4 Icon Title is required" })}
+          {...register("s4_icon_title",)}
         />
-        {errors.s4_icon_title && <span>{errors.s4_icon_title.message}</span>}
+        {/* {errors.s4_icon_title && <span>{errors.s4_icon_title.message}</span>} */}
 
         <input
           type="text"
           placeholder="Satisfied Title"
-          {...register("satisfied_title", { required: "Satisfied Title is required" })}
+          {...register("satisfied_title")}
         />
-        {errors.satisfied_title && <span>{errors.satisfied_title.message}</span>}
+        {/* {errors.satisfied_title && <span>{errors.satisfied_title.message}</span>} */}
 
         {existingData.satisfied_video && (
           <div>
@@ -230,7 +230,7 @@ console.log("nskfnd", s1VideoFile, s2Image1File, s2Image2File, s3VideoFile, sati
           {...register("satisfied_video")}
           onChange={(e) => setSatisfiedVideoFile(e.target.files[0])}
         />
-        {errors.satisfied_video && <span>{errors.satisfied_video.message}</span>}
+        {/* {errors.satisfied_video && <span>{errors.satisfied_video.message}</span>} */}
 {/* <select multiple>
   <option value="active">Active</option>
   <option value="inactive">Inactive</option>
